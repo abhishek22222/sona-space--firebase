@@ -1,12 +1,12 @@
 import firebase from "firebase";
 const firebaseConfig = {
-  apiKey: "AIzaSyDG2mnrOkS0tafAjU1SqzXfaJS7AMKMSMg",
-  authDomain: "quora-clone-akky.firebaseapp.com",
-  projectId: "quora-clone-akky",
-  storageBucket: "quora-clone-akky.appspot.com",
-  messagingSenderId: "902318949999",
-  appId: "1:902318949999:web:8df2b97a20eece0209ef9a",
-  measurementId: "G-LJBYVXT22Z",
+  apiKey: "AIzaSyBn09KMkSB4O4DqnaMC9VQV8oDXdI6X24Q",
+  authDomain: "sonaspace-4aa9b.firebaseapp.com",
+  projectId: "sonaspace-4aa9b",
+  storageBucket: "sonaspace-4aa9b.appspot.com",
+  messagingSenderId: "146673368189",
+  appId: "1:146673368189:web:aef5bdf118ad6ccf728514",
+  measurementId: "G-VPYVWQ6PT0"
 };
 
 const firebaseApp = firebase.initializeApp(firebaseConfig);

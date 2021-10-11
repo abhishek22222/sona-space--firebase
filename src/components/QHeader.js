@@ -15,6 +15,9 @@ import { selectUser } from "../features/userSlice";
 import db, { auth } from "../firebase";
 import { ExpandMore, Link } from "@material-ui/icons";
 import firebase from "firebase";
+import { Nav, NavDropdown, Navbar, Container, Form, FormControl, InputGroup } from "react-bootstrap";
+import *as ReactBootStrap from "react-bootstrap";
+
 
 Modal.setAppElement("#root");
 
@@ -44,35 +47,30 @@ function QHeader() {
   };
 
   return (
-    <div className="qHeader">
-      <div className="qHeader__logo">
-        <img
-          src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Quora_logo_2015.svg/250px-Quora_logo_2015.svg.png"
-          alt=""
-        />
-      </div>
-      <div className="qHeader__icons">
-        <div className="active qHeader__icon">
-          <HomeIcon />
-        </div>
-        <div className="qHeader__icon">
-          <FeaturedPlayListOutlinedIcon />
-        </div>
-        <div className="qHeader__icon">
-          <AssignmentTurnedInOutlinedIcon />
-        </div>
-        <div className="qHeader__icon">
-          <PeopleAltOutlinedIcon />
-        </div>
-        <div className="qHeader__icon">
-          <NotificationsOutlinedIcon />
-        </div>
-      </div>
-      <div className="qHeader__input">
+    <div className="top">
+
+      <Navbar expand="lg">
+        <Navbar.Brand href="#" className="logo">Sona_Space</Navbar.Brand>
+        <Navbar.Toggle aria-controls="navbarScroll" />
+        <Navbar.Collapse id="navbarScroll">
+          <Nav
+            className="mr-auto my-2 my-lg-0"
+            style={{ maxHeight: '100px' }}
+            navbarScroll
+          >
+            <Nav.Link href="#action1" className="comp">Home</Nav.Link>
+            <Nav.Link href="#action2" className="comp">Companies</Nav.Link>
+            <Nav.Link href="#action2" className="comp">Archives</Nav.Link>
+            
+      
+    
+
+          </Nav>
+          <div className="qHeader__input">
         <SearchIcon />
         <input type="text" placeholder="Search Quora" />
       </div>
-      <div className="qHeader__Rem">
+        </Navbar.Collapse>
         <div className="qHeader__avatar">
           <Avatar
             onClick={() => auth.signOut()}
@@ -84,8 +82,7 @@ function QHeader() {
             }
           />
         </div>
-        <LanguageIcon />
-        <Button onClick={() => setIsModalOpen(true)}>Add Question</Button>
+        <Button onClick={() => setIsModalOpen(true)} className="addQuestion">Add Question</Button>
         <Modal
           isOpen={IsmodalOpen}
           onRequestClose={() => setIsModalOpen(false)}
@@ -93,7 +90,7 @@ function QHeader() {
           style={{
             overlay: {
               width: 700,
-              height: 600,
+              height: 700,
               backgroundColor: "rgba(0,0,0,0.8)",
               zIndex: "1000",
               top: "50%",
@@ -149,7 +146,8 @@ function QHeader() {
             </button>
           </div>
         </Modal>
-      </div>
+
+      </Navbar>
     </div>
   );
 }
